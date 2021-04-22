@@ -16,3 +16,9 @@ with open(budget_csv, 'r') as budget_csv:
 months = []
 gainloss = []
 
+# starting that great loop
+for row in csvreader:
+    month.append(row[1])
+    profit.apend(int(row[1])
+    
+
