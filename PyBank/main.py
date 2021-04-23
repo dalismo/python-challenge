@@ -15,11 +15,11 @@ greatest_increase_gainloss = 0
 greatest_decrease_gainloss = 0
 total_gainloss = 0
 prior_gainloss = 0
-percent_gainloss = 0
+amount_gainloss = 0
 difference = 0
 difference_list = []
 
-# check on variables
+# check 
 print(total_months)
 
 # Open and read the file using module
@@ -29,30 +29,53 @@ with open(budget_csv) as csvfile:
    
     # variable to store rows
     firstrow = next(csvreader)
+
+    # take the prior value from the firstrow,[] is the index position
+    prior_gainloss = int(firstrow[1])
+
+    # check 
+    print(prior_gainloss)
     
+    # start of the loop through the data
+    for row in csvreader:
+        total_months = total_months +1
+        total_gainloss = total_gainloss + int(row[1])
+        amount_gainloss = int(row[1])
+        difference = amount_gainloss - prior_gainloss
+        difference_list.append(difference)
+        prior_gainloss = amount_gainloss
 
-#     # take the prior value from the firstrow
-#     prior_gainloss = int(firstrow[1])
+        # conditionals
+        if amount_gainloss > greatest_increase_gainloss:
+            greatest_increase_gainloss = amount_gainloss
+            mx_month = row[0]
+        if amount_gainloss < greatest_decrease_gainloss:
+            greatest_decrease_gainloss = amount_gainloss
+            mn_month = row[0]
 
-#     # start of the loop through the data
-#     for row in csvreader:
-#         total_months = total_months + 1
-#         total_gainloss = total_gainloss + int(row[1])
-#         percent_gainloss = int(row[1])
-#         difference = percent_gainloss - prior_gainloss
-#         difference_list.append(difference_list)
-#         prior_gainloss = percent_gainloss
+# check
+print(total_months)
+print(total_gainloss)
 
-#         # conditionals
-#         if percent_gainloss > greatest_increase_gainloss:
-#             greatest_increase_gainloss = percent_gainloss
-#             mx_month = row[0]
-#         if percent_gainloss < greatest_decrease_gainloss:
-#             greatest_decrease_gainloss = percent_gainloss
-#             mn_month = row[0]
 
-# # time to get the average of changes in gain/loss over the whole period
-# theaverage = (sum(difference_list) / total_months)
+
+
+
+
+
+# time to get the average of changes in gain/loss over the whole period
+theaverage = sum(difference_list)/total_months
+
+# check
+print(theaverage)
+
+
+
+
+
+
+
+
 
 # # time to print results to match view needed
 # print(f"Financial Analysis")
