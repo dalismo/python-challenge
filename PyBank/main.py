@@ -46,4 +46,11 @@ with open(budget_csv) as csvfile:
             mn_month = row[0]
 
 # time to get the average of changes in gain/loss over the whole period
-theaverage = (sum(difference_list)
+theaverage = (sum(difference_list) / total_months)
+print("Financial Review")
+print(f"Total Months: {total_months}")
+print(f"Total: {total_gainloss}")
+print(f"Average Change: {theaverage")
+print(f"Greatest Increase in Profits: {greatest_increase_gainloss}")
+print(f"Greatest Decrease in Profits: {greatest_decrease_gainloss")
+
