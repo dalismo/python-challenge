@@ -5,6 +5,7 @@ import csv
 # filepath 
 budget_csv = os.path.join('.','Resources','budget_data.csv')
 
+#check
 print(budget_csv)
 
 
@@ -57,33 +58,20 @@ with open(budget_csv) as csvfile:
 print(total_months)
 print(total_gainloss)
 
-
-
-
-
-
-
 # time to get the average of changes in gain/loss over the whole period
 theaverage = sum(difference_list)/total_months
 
 # check
 print(theaverage)
 
-
-
-
-
-
-
-
-
-# # time to print results to match view needed
-# print(f"Financial Analysis")
-# print(f"Total Months: {total_months}")
+# time to print results to match view needed
+print("Financial Analysis")
+print("--------------------------------------------")
+print("Total Months: {total_months}")
 # print(f"Total: {total_gainloss}")
 # print(f"Average Change: {theaverage}")
-# print(f"Greatest Increase in Profits: {greatest_increase_gainloss}")
-# print(f"Greatest Decrease in Profits: {greatest_decrease_gainloss}")
+# print(f"Greatest Increase in Profits: {mx_month} {greatest_increase_gainloss}")
+# print(f"Greatest Decrease in Profits: {mn_month} {greatest_decrease_gainloss}")
 
 # # creating export file and writing to file results
 # output = open("results.txt","w+")
@@ -95,4 +83,10 @@ print(theaverage)
 # output.write(f"Average Change: {theaverage} \n")
 # output.write(f"Greatest Increase in Profits: {greatest_increase_gainloss} \n")
 # output.write(f"Greatest Decrease in Profits: {greatest_decrease_gainloss} \n")
+
+
+
+
+
+
 
