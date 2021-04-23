@@ -10,4 +10,21 @@ print(election_csv)
 with open(election_csv) as csvfile:
     csvreader = csv.reader(csvfile, delimiter = ',')
     csv_header = next(csvreader)
+    csv_header = next(csvfile)
+
+#take the first row
+firstrow = next(csvreader)
+
+# vartiables to hold datapoints
+total_cast = 0
+candidates = {}
+percent = {}
+thewinner = ""
+win_count = 0
+
+
+
+
+
+
 
