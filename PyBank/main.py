@@ -35,5 +35,15 @@ with open(budget_csv) as csvfile:
         percent_gainloss = int(row[1])
         difference = percent_gainloss - prior_gainloss
         difference_list.append(difference_list)
-        
+        prior_gainloss = percent_gainloss
+
+        # conditionals
+        if percent_gainloss > greatest_increase_gainloss:
+            greatest_increase_gainloss = percent_gainloss
+            mx_month = row(0)
+        if percent_gainloss < greatest_decrease_gainloss:
+            greatest_decrease_gainloss = percent_gainloss
+            mn_month = row(0)
+
+
 
