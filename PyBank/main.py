@@ -19,9 +19,22 @@ change_gainloss = 0
 difference = 0
 difference_list = []
 
-
 # Open and read the file using module
-with open(budget_csv, newline="") as csvfile:
-    csvreader = csv.reader(csvfile, delimiter=",")
+with open(budget_csv) as csvfile:
+    csvreader = csv.reader(csvfile, delimiter = ",")
+
+    csv_header = next(csvreader)
+   
+    # variable to store rows
+    firstrow = next(csvreader)
+
+    # take the prior value from the firstrow
+    prior_gainloss = int(firstrow[1])
+
+    # start of the loop through the data
+    
+
+
+
 
 
