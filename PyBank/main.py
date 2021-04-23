@@ -19,7 +19,6 @@ difference_list = []
 # Open and read the file using module
 with open(budget_csv) as csvfile:
     csvreader = csv.reader(csvfile, delimiter = ',')
-
     csv_header = next(csvreader)
    
     # variable to store rows
@@ -47,10 +46,22 @@ with open(budget_csv) as csvfile:
 
 # time to get the average of changes in gain/loss over the whole period
 theaverage = (sum(difference_list) / total_months)
-print("Financial Review")
+
+# time to print results to match view needed
+print("Financial Analysis")
 print(f"Total Months: {total_months}")
 print(f"Total: {total_gainloss}")
-print(f"Average Change: {theaverage")
+print(f"Average Change: {theaverage}")
 print(f"Greatest Increase in Profits: {greatest_increase_gainloss}")
-print(f"Greatest Decrease in Profits: {greatest_decrease_gainloss")
+print(f"Greatest Decrease in Profits: {greatest_decrease_gainloss}")
 
+# creating export file
+output = open("results.txt","w+")
+
+output.write("Financial Analysis \n")
+output.write("-------------------------------------------- \n")
+output.write(f"Total Months: {total_months} \n")
+output.write(f"Total: {total_gainloss} \n")
+output.write(f"Average Change: {theaverage} \n")
+output.write(f"Greatest Increase in Profits: {greatest_increase_gainloss} \n")
+output.write(f"Greatest Decrease in Profits: {greatest_decrease_gainloss} \n")
