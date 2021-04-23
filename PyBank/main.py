@@ -1,3 +1,4 @@
+# modules to bring in
 import os
 import csv
 
@@ -12,5 +13,9 @@ total_months = 0
 toal_gainloss = 0
 greatestincrease_gainloss = 0
 greatestdecrease_gainloss = 0
+
+# Open and read the file using module
+with open(budget_csv, newline="") as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=",")
 
 
