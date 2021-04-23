@@ -18,7 +18,7 @@ difference_list = []
 
 # Open and read the file using module
 with open(budget_csv) as csvfile:
-    csvreader = csv.reader(csvfile, delimiter = ",")
+    csvreader = csv.reader(csvfile, delimiter = ',')
 
     csv_header = next(csvreader)
    
@@ -40,10 +40,10 @@ with open(budget_csv) as csvfile:
         # conditionals
         if percent_gainloss > greatest_increase_gainloss:
             greatest_increase_gainloss = percent_gainloss
-            mx_month = row(0)
+            mx_month = row[0]
         if percent_gainloss < greatest_decrease_gainloss:
             greatest_decrease_gainloss = percent_gainloss
-            mn_month = row(0)
+            mn_month = row[0]
 
-
-
+# time to get the average of changes in gain/loss over the whole period
+theaverage = (sum(difference_list)
