@@ -65,3 +65,4 @@ output.write(f"Total: {total_gainloss} \n")
 output.write(f"Average Change: {theaverage} \n")
 output.write(f"Greatest Increase in Profits: {greatest_increase_gainloss} \n")
 output.write(f"Greatest Decrease in Profits: {greatest_decrease_gainloss} \n")
+
