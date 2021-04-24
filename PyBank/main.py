@@ -16,6 +16,7 @@ greatest_decrease_gainloss = 0
 total_gainloss = 0
 prior_gainloss = 0
 amount_gainloss = 0
+amt_gainloss = []
 difference = 0
 difference_list = []
 
@@ -39,23 +40,31 @@ with open(budget_csv) as csvfile:
     # start of the loop through the data
     for row in csvreader:
         total_months.append(row[0])
-    print(len(total_months))
+        total_gainloss = total_gainloss + int(row[1])
+        amount_gainloss = int(row[1])
+        difference = amount_gainloss - prior_gainloss
+        if prior_gainloss == 0:
+            difference = 0
+        difference_list.append(difference)
+        prior_gainloss = amount_gainloss
+    theaverage= sum(difference_list)/(len(total_months)-1)
+    print(theaverage)
+
+    #     # if amount_gainloss > greatest_increase_gainloss:
+        #     greatest_increase_gainloss = amount_gainloss
+        #     mx_month = row[0]
+        # print(greatest_increase_gainloss)
+        # if amount_gainloss < greatest_decrease_gainloss:
+        #     greatest_decrease_gainloss = amount_gainloss
+        #     mn_month = row[0]
+        # print(greatest_decrease_gainloss)
 
 
-#         total_gainloss = total_gainloss + int(row[1])
-#         amount_gainloss = int(row[1])
-#         print(amount_gainloss)
 # #         difference = amount_gainloss - prior_gainloss
 #         difference_list.append(difference)
 #         prior_gainloss = amount_gainloss
 
-#         # conditionals
-#         if amount_gainloss > greatest_increase_gainloss:
-#             greatest_increase_gainloss = amount_gainloss
-#             mx_month = row[0]
-#         if amount_gainloss < greatest_decrease_gainloss:
-#             greatest_decrease_gainloss = amount_gainloss
-#             mn_month = row[0]
+
 
 # # check
 # print(prior_gainloss)
@@ -88,6 +97,52 @@ with open(budget_csv) as csvfile:
 # # output.write(f"Average Change: {theaverage} \n")
 # # output.write(f"Greatest Increase in Profits: {greatest_increase_gainloss} \n")
 # # output.write(f"Greatest Decrease in Profits: {greatest_decrease_gainloss} \n")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
