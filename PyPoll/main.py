@@ -16,8 +16,12 @@ with open(election_csv) as csvfile:
     csv_header = next(csvreader)
 
     for row in csvreader:
-        total_votes = total_votes +1
+        total_votes = total_votes + 1
+        # column 3 location
         candidates_name = (row[2])
         if candidates_name in candidates:
             candidate_place = candidates.index(candidates_name)
             vote_count[candidate_place] = vote_count[candidate_place] +1
+        else:
+            candidates.append(candidates_name)
+            vote_count
