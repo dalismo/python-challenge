@@ -3,12 +3,11 @@ import os
 import csv
 
 # variables to hold datapoints
-total_votes = 0
-candidates = ""
-candidates_votes = {}
-candidates_percent = {}
-winning_votes = 0
-winner = ""
+candidates = []
+total_votes = 0 
+vote_counts = []
+election_data = ['1', '2']
+
 
 # filepath 
 election_csv = os.path.join('.','Resources','election_data.csv')
@@ -16,17 +15,25 @@ election_csv = os.path.join('.','Resources','election_data.csv')
 # Open and read the file using module
 with open(election_csv) as csvfile:
     csvreader = csv.reader(csvfile, delimiter = ',')
-    next(csvreader)
+    csv_header = next(csvreader)
 
     for row in csvreader:
         total_votes = total_votes + 1
-        candidates = row[2]
-        if candidates in candidates_votes:
-            candidate_place = candidates.index(candidates_name)
-            condidate_votes[candidates] = condidate_votes[candidates] +1
-        else:
-            candidates_votes[condidates] = 1
+# print(total_votes)
+        candidate = row[2]
+        print(candidate)
 
-# what is the vote percentage 
+# # what is the vote percentage 
+# for person, vote_count in candidates_votes.items():
+#     candidates_percent[person] = '{0:.0%}'.format(vote_count / total_votes)
+#     if vote_count > winner_votes:
+#         winner_votes = vote_count
+#         winner = person
+# print(total_votes)
+
+
+
+
+
 
 
