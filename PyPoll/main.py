@@ -4,12 +4,10 @@ import csv
 
 # filepath 
 election_csv = os.path.join('.','Resources','election_data.csv')
-print(election_csv)
 
 # Open and read the file using module
 with open(election_csv) as csvfile:
     csvreader = csv.reader(csvfile, delimiter = ',')
-    csv_header = next(csvreader)
     csv_header = next(csvfile)
 
 #take the first row
@@ -22,9 +20,6 @@ percent = {}
 thewinner = ""
 win_count = 0
 
-
-
-
-
-
-
+# start of the loop
+for row in csvreader:
+    total_cast = total_cast +1

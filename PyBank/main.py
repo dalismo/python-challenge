@@ -5,20 +5,18 @@ import csv
 # filepath 
 budget_csv = os.path.join('.','Resources','budget_data.csv')
 
-#check
-print(budget_csv)
-
 # variables to store for counts, calcs and loop
 total_months = []
 total_net_gainloss = 0
-greatest_increase_gainloss = 0
-greatest_decrease_gainloss = 0
 total_gainloss = 0
 prior_gainloss = 0
 amount_gainloss = 0
 amt_gainloss = []
 difference = 0
 difference_list = []
+max_month = 0
+min_month = 0
+
 
 # # check 
 # print(total_months)
@@ -48,140 +46,37 @@ with open(budget_csv) as csvfile:
         difference_list.append(difference)
         prior_gainloss = amount_gainloss
     theaverage= sum(difference_list)/(len(total_months)-1)
-    print(theaverage)
-
-    #     # if amount_gainloss > greatest_increase_gainloss:
-        #     greatest_increase_gainloss = amount_gainloss
-        #     mx_month = row[0]
-        # print(greatest_increase_gainloss)
-        # if amount_gainloss < greatest_decrease_gainloss:
-        #     greatest_decrease_gainloss = amount_gainloss
-        #     mn_month = row[0]
-        # print(greatest_decrease_gainloss)
-
-
-# #         difference = amount_gainloss - prior_gainloss
-#         difference_list.append(difference)
-#         prior_gainloss = amount_gainloss
-
-
-
-# # check
-# print(prior_gainloss)
-# print(amount_gainloss)
-# print(total_months)
-# # print(total_gainloss)
-
-# # # time to get the average of changes in gain/loss over the whole period
-# # theaverage = sum(difference_list)/total_months
-
-# # # check
-# # print(theaverage)
-
-# # # time to print results to match view needed
-# # print("Financial Analysis")
-# # print("--------------------------------------------")
-# # print(f'Total Months: {total_months}')
-# # # # print(f"Total: {total_gainloss}")
-# # # # print(f"Average Change: {theaverage}")
-# # # print(f"Greatest Increase in Profits: {mx_month} {greatest_increase_gainloss}")
-# # # print(f"Greatest Decrease in Profits: {mn_month} {greatest_decrease_gainloss}")
-
-# # # # export of the file
-# # # output = open("results.txt","w+")
-
-# # output.write("Financial Analysis \n")
-# # output.write("-------------------------------------------- \n")
-# # output.write(f"Total Months: {total_months} \n")
-# # output.write(f"Total: {total_gainloss} \n")
-# # output.write(f"Average Change: {theaverage} \n")
-# # output.write(f"Greatest Increase in Profits: {greatest_increase_gainloss} \n")
-# # output.write(f"Greatest Decrease in Profits: {greatest_decrease_gainloss} \n")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    new_month = (len(total_months))
+    highest = max(difference_list)
+    lowest = min(difference_list)
+
+
+newaverage = "{:.2f}".format(theaverage)
+new_month = str(new_month)
+total_gainloss = str(total_gainloss)
+newaverage = str(newaverage)
+highest = str(highest)
+lowest = str(lowest)
+
+# # time to print results to match view needed
+print("Financial Analysis")
+print("--------------------------------------------")
+print("Total Months: "+ new_month)
+print("Total: $"+total_gainloss)
+print("Average Change: $"+ newaverage)
+print("Greatest Increase in Profits: $"+ highest)
+print("Greatest Decrease in Profits: $"+ lowest)
+
+# export of the file
+output = open("results.txt","w+")
+
+output.write("Financial Analysis ")
+output.write("\n -------------------------------------------- ")
+output.write("\nTotal Months: "+ new_month)
+output.write("\nTotal: $"+ total_gainloss)
+output.write("\nAverage Change: $"+ newaverage)
+output.write("\nGreatest Increase in Profits: $"+ highest)
+output.write("\nGreatest Decrease in Profits: $"+ lowest)
 
 
 
