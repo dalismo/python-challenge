@@ -1,4 +1,4 @@
-git # modules to bring in
+# modules to bring in
 import os
 import csv
 
@@ -77,6 +77,7 @@ output.write("\nTotal: $"+ total_gainloss)
 output.write("\nAverage Change: $"+ newaverage)
 output.write("\nGreatest Increase in Profits: $"+ highest)
 output.write("\nGreatest Decrease in Profits: $"+ lowest)
+
 
 
 
