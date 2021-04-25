@@ -34,74 +34,34 @@ with open(election_csv) as csvfile:
             Li = Li +1
         elif candidate == "O'Tooley":
             OTooley = OTooley + 1
-    winner = min(Candidates)
     percent_Khan = (Khan * 100)/ number_votes
     percent_Correy = (Correy*100)/ number_votes
     percent_Li= (Li*100)/ number_votes
     percent_OTooley = (OTooley*100)/ number_votes
-    
     print(Khan)
     print(number_votes)
     print(percent_Khan)
     print(percent_Correy)
     print(percent_Li)
     print(percent_OTooley)
-    print(winner)
-
-# print("Election Results are in!")
-# print("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-")
-# print("Total Votes: " + str(rowcount))
-# print("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-")
 
 
+
+print("Election Results are in!")
+print("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-")
+print("Total Votes: " + str(number_votes))
+print("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-")
+
+print("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-")
+# # print("Winner: " + str(WinnersName))
+print("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-")
+
+with open("election_results.txt", "w") as output:
+	output.write("Election Results are in!\n")
+	output.write("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-\n")
+# 	output.write("Total Votes: " + str(number_votes) + "\n")
+	output.write("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-\n")
     
-# print("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-")
-# print("Winner: " + str(WinnersName))
-# print("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-")
-
-# with open("election_results.txt", "w") as output:
-# 	output.write("Election Results are in!\n")
-# 	output.write("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-\n")
-# 	output.write("Total Votes: " + str(rowcount) + "\n")
-# 	output.write("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-\n")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
